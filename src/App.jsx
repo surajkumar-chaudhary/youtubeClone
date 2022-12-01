@@ -14,7 +14,7 @@ import {
 function App() {
   return (
     <AppContext>
-      <Header />
+      {/* 
       <Header />
       <Feed />
       <LeftNav />
@@ -22,7 +22,20 @@ function App() {
       <SearchResult />
       <SearchResultVideoCard />
       <VideoCard />
-      <VideoDetails />
+      <VideoDetails /> */}
+      <Router>
+        <div className="flex flex-col h-full">
+          <Header />
+          <Routes>
+            <Route path="/" exact element={<Feed />} />
+            <Route
+              path="/searchResult/:searchQuery"
+              element={<SearchResult />}
+            />
+            <Route path="" element={<VideoDetails />} />
+          </Routes>
+        </div>
+      </Router>
     </AppContext>
   );
 }

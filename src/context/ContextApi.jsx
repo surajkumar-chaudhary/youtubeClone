@@ -2,7 +2,7 @@ import React, { createContext, useState, useEffect } from "react";
 
 import { fetchDataFromApi } from "../utils/api";
 
-const context = createContext();
+export const Context = createContext();
 
 const AppContext = (props) => {
   const [loading, setLoading] = useState(false);
@@ -23,7 +23,7 @@ const AppContext = (props) => {
   };
 
   return (
-    <context.Provider
+    <Context.Provider
       value={{
         loading,
         setLoading,
@@ -36,7 +36,7 @@ const AppContext = (props) => {
       }}
     >
       {props.children}
-    </context.Provider>
+    </Context.Provider>
   );
 };
 
